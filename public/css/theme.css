@@ -1,0 +1,515 @@
+/*!
+ * Bermuda Cyber Family Theme for Pterodactyl Panel
+ * A dark cyberpunk theme with cyan/blue aesthetics
+ * Author: dinethnethsara
+ * GitHub: https://github.com/dinethnethsara
+ * License: MIT
+ */
+
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
+:root {
+    --bcf-primary: #00d4ff;
+    --bcf-primary-light: #22d3ee;
+    --bcf-primary-dark: #0ea5e9;
+    --bcf-secondary: #0a0e27;
+    --bcf-secondary-light: #1a1d35;
+    --bcf-accent: #00ffff;
+    --bcf-text: #ffffff;
+    --bcf-text-muted: #94a3b8;
+    --bcf-border: rgba(0, 212, 255, 0.3);
+    --bcf-glow: 0 0 20px rgba(0, 212, 255, 0.4);
+    --bcf-danger: #ef4444;
+    --bcf-success: #10b981;
+    --bcf-warning: #f59e0b;
+}
+
+/* ============================================
+   BACKGROUND & BODY
+   ============================================ */
+body {
+    background: var(--bcf-secondary) !important;
+    color: var(--bcf-text) !important;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(10, 14, 39, 0.95) 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bcf-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--bcf-primary), var(--bcf-primary-dark));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bcf-primary-light);
+}
+
+/* ============================================
+   NAVIGATION / HEADER
+   ============================================ */
+nav,
+.navigation,
+[class*="Navigation"],
+header {
+    background: rgba(10, 14, 39, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid var(--bcf-border) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Navigation Links */
+nav a,
+.navigation a,
+[class*="Navigation"] a {
+    color: var(--bcf-text) !important;
+    transition: all 0.3s ease !important;
+}
+
+nav a:hover,
+.navigation a:hover {
+    color: var(--bcf-primary-light) !important;
+    text-shadow: var(--bcf-glow);
+}
+
+/* ============================================
+   CARDS & PANELS
+   ============================================ */
+[class*="bg-gray"],
+[class*="bg-neutral"],
+.card,
+.panel,
+[role="dialog"],
+[class*="Card"],
+[class*="Box"] {
+    background: rgba(10, 14, 39, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid var(--bcf-border) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 212, 255, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+[class*="bg-gray"]:hover,
+[class*="bg-neutral"]:hover,
+.card:hover {
+    border-color: rgba(0, 212, 255, 0.6) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 50px rgba(0, 212, 255, 0.3) !important;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+button,
+[type="button"],
+[type="submit"],
+.btn,
+[class*="Button"] {
+    background: linear-gradient(135deg, var(--bcf-primary-dark), var(--bcf-primary)) !important;
+    color: white !important;
+    border: 1px solid var(--bcf-primary) !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button:hover,
+[type="button"]:hover,
+[type="submit"]:hover,
+.btn:hover {
+    background: linear-gradient(135deg, var(--bcf-primary), var(--bcf-primary-light)) !important;
+    box-shadow: var(--bcf-glow), 0 6px 20px rgba(0, 212, 255, 0.5) !important;
+    transform: translateY(-2px);
+}
+
+/* Danger Buttons */
+[class*="danger"],
+[class*="red"],
+button.bg-red-600 {
+    background: linear-gradient(135deg, #dc2626, var(--bcf-danger)) !important;
+    border-color: var(--bcf-danger) !important;
+}
+
+/* Success Buttons */
+[class*="success"],
+[class*="green"],
+button.bg-green-600 {
+    background: linear-gradient(135deg, #059669, var(--bcf-success)) !important;
+    border-color: var(--bcf-success) !important;
+}
+
+/* ============================================
+   INPUTS & FORMS
+   ============================================ */
+input,
+textarea,
+select,
+[class*="Input"],
+[class*="input"] {
+    background: rgba(10, 14, 39, 0.6) !important;
+    border: 1px solid var(--bcf-border) !important;
+    border-radius: 6px !important;
+    color: var(--bcf-text) !important;
+    transition: all 0.3s ease !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--bcf-primary) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.3) !important;
+    background: rgba(10, 14, 39, 0.8) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--bcf-text-muted) !important;
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+}
+
+thead,
+[class*="thead"],
+table th {
+    background: rgba(0, 212, 255, 0.1) !important;
+    color: var(--bcf-primary-light) !important;
+    border-bottom: 2px solid var(--bcf-primary) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.875rem;
+}
+
+tbody tr,
+table tr {
+    border-bottom: 1px solid var(--bcf-border) !important;
+    transition: all 0.2s ease;
+}
+
+tbody tr:hover,
+table tr:hover {
+    background: rgba(0, 212, 255, 0.08) !important;
+}
+
+/* ============================================
+   MODALS & DIALOGS
+   ============================================ */
+[role="dialog"],
+.modal,
+[class*="Modal"] {
+    background: rgba(10, 14, 39, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 2px solid var(--bcf-primary) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 80px rgba(0, 212, 255, 0.4) !important;
+}
+
+/* Modal Overlay */
+[class*="fixed"][class*="inset-0"],
+.modal-backdrop {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+/* ============================================
+   ALERTS & NOTIFICATIONS
+   ============================================ */
+[role="alert"],
+.alert,
+[class*="Alert"] {
+    background: rgba(10, 14, 39, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border-left: 4px solid var(--bcf-primary) !important;
+    border-radius: 8px !important;
+    color: var(--bcf-text) !important;
+}
+
+/* Danger Alerts */
+[class*="red"][role="alert"],
+.alert-danger {
+    border-left-color: var(--bcf-danger) !important;
+}
+
+/* Success Alerts */
+[class*="green"][role="alert"],
+.alert-success {
+    border-left-color: var(--bcf-success) !important;
+}
+
+/* Warning Alerts */
+[class*="yellow"][role="alert"],
+.alert-warning {
+    border-left-color: var(--bcf-warning) !important;
+}
+
+/* ============================================
+   SERVER CARDS
+   ============================================ */
+[class*="ServerRow"],
+[class*="server"],
+.server-card {
+    background: rgba(10, 14, 39, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid var(--bcf-border) !important;
+    border-radius: 10px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+[class*="ServerRow"]:hover,
+.server-card:hover {
+    border-color: var(--bcf-primary) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 60px rgba(0, 212, 255, 0.4) !important;
+    transform: translateY(-4px) scale(1.01) !important;
+}
+
+/* ============================================
+   CONSOLE / TERMINAL
+   ============================================ */
+[class*="Console"],
+[class*="Terminal"],
+.console,
+pre,
+code {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid var(--bcf-primary) !important;
+    border-radius: 8px !important;
+    color: var(--bcf-primary-light) !important;
+    font-family: 'Courier New', monospace !important;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+aside,
+.sidebar,
+[class*="Sidebar"] {
+    background: rgba(10, 14, 39, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-right: 1px solid var(--bcf-border) !important;
+}
+
+aside a,
+.sidebar a {
+    color: var(--bcf-text) !important;
+    transition: all 0.3s ease !important;
+}
+
+aside a:hover,
+.sidebar a:hover {
+    color: var(--bcf-primary-light) !important;
+    background: rgba(0, 212, 255, 0.1) !important;
+}
+
+aside a.active,
+.sidebar a.active {
+    color: var(--bcf-primary) !important;
+    background: rgba(0, 212, 255, 0.15) !important;
+    border-left: 3px solid var(--bcf-accent) !important;
+}
+
+/* ============================================
+   PROGRESS BARS
+   ============================================ */
+[role="progressbar"],
+.progress-bar,
+[class*="Progress"] {
+    background: rgba(10, 14, 39, 0.6) !important;
+    border-radius: 10px !important;
+    overflow: hidden;
+}
+
+[role="progressbar"] > div,
+.progress-bar > div {
+    background: linear-gradient(90deg, var(--bcf-primary-dark), var(--bcf-primary), var(--bcf-accent)) !important;
+    box-shadow: var(--bcf-glow);
+}
+
+/* ============================================
+   BADGES & TAGS
+   ============================================ */
+.badge,
+[class*="Badge"],
+[class*="Tag"] {
+    background: linear-gradient(135deg, var(--bcf-primary-dark), var(--bcf-primary)) !important;
+    color: white !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px !important;
+    font-size: 0.75rem !important;
+}
+
+/* ============================================
+   DROPDOWNS
+   ============================================ */
+[role="menu"],
+.dropdown-menu,
+[class*="Dropdown"] {
+    background: rgba(10, 14, 39, 0.95) !important;
+    backdrop-filter: blur(15px) !important;
+    border: 1px solid var(--bcf-border) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+[role="menuitem"],
+.dropdown-item {
+    color: var(--bcf-text) !important;
+    transition: all 0.2s ease;
+}
+
+[role="menuitem"]:hover,
+.dropdown-item:hover {
+    background: rgba(0, 212, 255, 0.15) !important;
+    color: var(--bcf-primary-light) !important;
+}
+
+/* ============================================
+   FILE MANAGER
+   ============================================ */
+[class*="FileManager"],
+[class*="File"],
+.file-row {
+    transition: all 0.2s ease;
+}
+
+[class*="FileManager"] [class*="row"]:hover,
+.file-row:hover {
+    background: rgba(0, 212, 255, 0.1) !important;
+    border-left: 3px solid var(--bcf-primary) !important;
+}
+
+/* ============================================
+   STATUS INDICATORS
+   ============================================ */
+.status-running,
+[class*="status-running"],
+[class*="online"] {
+    color: var(--bcf-success) !important;
+}
+
+.status-offline,
+[class*="status-offline"],
+[class*="offline"] {
+    color: var(--bcf-danger) !important;
+}
+
+.status-starting,
+[class*="status-starting"],
+[class*="starting"] {
+    color: var(--bcf-warning) !important;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+a {
+    color: var(--bcf-primary-light) !important;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: var(--bcf-accent) !important;
+}
+
+/* ============================================
+   TEXT COLORS
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--bcf-text) !important;
+}
+
+[class*="text-gray"],
+[class*="text-neutral"] {
+    color: var(--bcf-text-muted) !important;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.6); }
+}
+
+.animate-glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    body::before {
+        opacity: 0.7;
+    }
+    
+    [class*="ServerRow"]:hover,
+    .server-card:hover {
+        transform: translateY(-2px) scale(1) !important;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   LOADING SPINNER
+   ============================================ */
+.spinner,
+[class*="Spinner"],
+[class*="Loading"] {
+    border-color: rgba(0, 212, 255, 0.2) !important;
+    border-top-color: var(--bcf-primary) !important;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR FOR SPECIFIC AREAS
+   ============================================ */
+.console::-webkit-scrollbar-thumb,
+pre::-webkit-scrollbar-thumb {
+    background: var(--bcf-primary) !important;
+}

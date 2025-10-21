@@ -1195,7 +1195,7 @@ Before submitting:
 
 ## 📜 Changelog
 
-### Version 1.0.0 (2025-10-21)
+### Version 0.1 (2025-10-21)
 
 #### 🎉 Initial Release
 
@@ -1392,7 +1392,7 @@ If you find this theme useful, please consider:
 
 **License**: [MIT License](#-license)
 
-**Version**: 1.0.0
+**Version**: 0.1
 
 ---
 
